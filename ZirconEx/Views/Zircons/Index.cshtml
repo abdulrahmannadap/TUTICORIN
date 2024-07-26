@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+
+<form asp-controller="Zircons" asp-action="ExcelDataFile" method="post" enctype="multipart/form-data">
+	<div>
+		<h2 class="text-center mt-2">Upload Excel file</h2>
+		<div class="mt-2 form-group">
+			<span>Select Excel</span>
+			<input type="file" name="excelFile" id="excelFile" class="form-control" accept=".csv, .xls, .xlsx" required />
+		</div>
+
+		<div class="row mt-2">
+			<div class="col-6">
+				<button type="submit" class="btn btn-success form-control">Upload</button>
+			</div>
+
+			<div class="col-6">
+				<a asp-controller="Students" asp-action="GetAll" class="btn btn-secondary form-control">Student List</a>
+			</div>
+		</div>
+	</div>
+
+</form>
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}
